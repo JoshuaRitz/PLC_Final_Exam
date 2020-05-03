@@ -6,7 +6,7 @@ int main() {
 	i = 0;
 	do {
 	    if((j + 2) == 3) {
-	        return 0;
+	        j--;
 	    } else if((j + 2) == 2) {
 			j--;
 		} else if((j + 2) == 0) {
