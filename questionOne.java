@@ -18,7 +18,7 @@ public class questionOne {
 		reader.close();
 		String content = stringBuilder.toString();
 		
-		String testStr = "\"String\" 100.0 100 String";
+		String testStr = "\"String\" 100.0234 100 String";
 		//System.out.println(content);
 		//strLitChecker(content);
 		//flPtLitChecker(content);
