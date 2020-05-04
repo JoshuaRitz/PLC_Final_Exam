@@ -147,7 +147,20 @@ void id(void) {
 }
 
 void int_lit(void) {
-	
+	if(nextToken == letter || nextToken == intLit) {
+		lex();
+	} else if(nextToken == leftParen) {
+		lex();
+		expr();
+		if(nextToken == rightParen) {
+			lex();
+		} else { 
+			error();
+		}
+	} else {
+		error();
+	}
+}
 	
 	
 	
