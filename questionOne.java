@@ -6,7 +6,9 @@ import java.util.regex.Matcher;
 
 public class questionOne {
 	public static void main(String[]args) throws FileNotFoundException, IOException {
-		BufferedReader reader = new BufferedReader(new FileReader("q1.txt"));
+		
+		//uncomment to run with q1.txt otherwise I've manually typed a test string
+		/*BufferedReader reader = new BufferedReader(new FileReader("q1.txt"));
 		StringBuilder stringBuilder = new StringBuilder();
 		String line = null;
 		String ls = System.getProperty("line.separator");
@@ -17,6 +19,7 @@ public class questionOne {
 		stringBuilder.deleteCharAt(stringBuilder.length() - 1);
 		reader.close();
 		String content = stringBuilder.toString();
+		*/
 		
 		String testStr = "\"String\" 100.0234 100.0234f 1.0e10f 100 String";
 		//System.out.println(content);
@@ -44,7 +47,7 @@ public class questionOne {
 	}
 	
 	public static void flPtLitChecker(String testString) {
-		Pattern pattern = Pattern.compile("[-+]?[0-9]+\\.[0-9]+[eE]?[-+]?[0-9]+[f]+?");
+		Pattern pattern = Pattern.compile("[-+]?[0-9]+\\.[0-9]+[eE]?[-+]?[0-9]+[f]?");
 		Matcher matcher = pattern.matcher(testString);
 		while(matcher.find()) {
 			matcher.start();
