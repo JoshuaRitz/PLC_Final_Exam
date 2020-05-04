@@ -18,7 +18,7 @@ public class questionOne {
 		reader.close();
 		String content = stringBuilder.toString();
 		
-		String testStr = "\"String\" 100.0234 100 String";
+		String testStr = "\"String\" 100.0234 100.0234f 1.0e10f 100 String";
 		//System.out.println(content);
 		//strLitChecker(content);
 		//flPtLitChecker(content);
@@ -44,7 +44,7 @@ public class questionOne {
 	}
 	
 	public static void flPtLitChecker(String testString) {
-		Pattern pattern = Pattern.compile("[+-]?[0-9]+\\.[0-9]+");
+		Pattern pattern = Pattern.compile("[-+]?[0-9]+\\.[0-9]+[eE]?[-+]?[0-9]+[f]+?");
 		Matcher matcher = pattern.matcher(testString);
 		while(matcher.find()) {
 			matcher.start();
